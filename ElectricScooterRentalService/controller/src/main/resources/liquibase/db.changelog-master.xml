@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="0" author="Tatiana Mikhalchenko">
+        <tagDatabase tag="db_init"/>
+    </changeSet>
+
+    <include file="classpath:liquibase/tables/create-city-table.xml"/>
+    <include file="classpath:liquibase/tables/create-station-table.xml"/>
+    <include file="classpath:liquibase/tables/create-scooter-type-table.xml"/>
+    <include file="classpath:liquibase/tables/create-scooter-table.xml"/>
+    <include file="classpath:liquibase/tables/create-abonement-table.xml"/>
+    <include file="classpath:liquibase/tables/create-user-account-table.xml"/>
+    <include file="classpath:liquibase/tables/create-user-account-history-table.xml"/>
+    <include file="classpath:liquibase/tables/create-roles-table.xml"/>
+    <include file="classpath:liquibase/tables/create-user-profile-table.xml"/>
+    <include file="classpath:liquibase/tables/create-user-profile-roles-table.xml"/>
+    <include file="classpath:liquibase/tables/create-discount-table.xml"/>
+    <include file="classpath:liquibase/tables/create-abonement-history-table.xml"/>
+    <include file="classpath:liquibase/tables/create-booking-table.xml"/>
+
+    <include file="classpath:liquibase/insert/insert-data-city.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-station.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-scooter-type.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-scooter.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-abonement.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-user-account.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-user-account-history.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-user-profile.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-roles.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-user-profile-roles.xml"/>
+    <include file="classpath:liquibase/insert/insert-data-discount.xml"/>
+
+    <changeSet id="1" author="Tatiana Mikhalchenko">
+        <tagDatabase tag="v.1.0.0"/>
+    </changeSet>
+</databaseChangeLog>

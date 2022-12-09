@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="04" author="Tatiana Mikhalchenko">
+      <createTable tableName="scooter"
+      remarks="A scooters to contain all the scooters">
+          <column name="id" type="bigint" autoIncrement="true">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+          <column name="serial_number" type="varchar(50)">
+        <constraints nullable="false" unique="true"/>
+          </column>
+          <column name="release_year" type="int">
+          <constraints nullable="false"/>
+      </column>
+          <column name="mileage" type="double">
+          <constraints nullable="false"/>
+      </column>
+          <column name="status" type="varchar(10)">
+              <constraints nullable="false" checkConstraint="CHECK (status='FREE' or status='RENT' or status='REPAIR')"/>
+          </column>
+          <column name="coordinate_x" type="double">
+              <constraints nullable="false"/>
+          </column>
+          <column name="coordinate_y" type="double">
+              <constraints nullable="false"/>
+          </column>
+          <column name="cost_per_min" type="numeric(5,2)" >
+              <constraints nullable="false" checkConstraint="CHECK (cost_per_min &gt;= 0)"/>
+          </column>
+          <column name="station_id" type="bigint">
+              <constraints foreignKeyName="station_scooter_id" references="station(id)"/>
+          </column>
+          <column name="scooter_type_id" type="bigint">
+              <constraints foreignKeyName="scooter_type_scooter_id" references="scooter_type(id)"/>
+          </column>
+
+      </createTable>
+  </changeSet>
+</databaseChangeLog>

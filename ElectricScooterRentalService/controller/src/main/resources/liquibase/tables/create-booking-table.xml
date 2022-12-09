@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="013" author="Tatiana Mikhalchenko">
+    <createTable tableName="booking"
+          remarks="A table to contain all bookings">
+      <column name="id" type="bigint" autoIncrement="true">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column defaultValueBoolean="false" name="deleted" type="boolean" defaultValueDate="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="start_rent_date" type="timestamp" defaultValueDate="current_timestamp">
+        <constraints nullable="false" />
+      </column>
+      <column name="end_rent_date" type="timestamp">
+<!--        <constraints nullable="false" />-->
+      </column>
+      <column name="distance" type="double" defaultValueDate="0.00">
+        <constraints nullable="false"/>
+      </column>
+      <column name="cost" type="numeric(1000,2)" defaultValueDate="0.00">
+        <constraints nullable="false"/>
+      </column>
+      <column name="booking_status" type="varchar(50)">
+        <constraints nullable="false" checkConstraint="CHECK (status='OPEN' or status='CLOSE')"/>
+      </column>
+      <column name="user_profile_id" type="bigint">
+        <constraints foreignKeyName="user_profile_booking_id" references="user_profile(id)"/>
+      </column>
+      <column name="scooter_id" type="bigint">
+        <constraints foreignKeyName="scooter_booking_id" references="scooter(id)"/>
+      </column>
+    </createTable>
+
+  </changeSet>
+</databaseChangeLog>

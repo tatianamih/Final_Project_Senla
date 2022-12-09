@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="04" author="Tatiana Mikhalchenko">
+    <comment>Stations</comment>
+    <insert tableName="station">
+           <column name="name" value="station1"/>
+      <column name="address" value="st Lenina,5"/>
+      <column name="city_id" valueNumeric="01"/>
+    </insert>
+    <insert tableName="station">
+           <column name="name" value="station2"/>
+      <column name="address" value="str Mazurova,8"/>
+      <column name="city_id" valueNumeric="01"/>
+    </insert>
+    <insert tableName="station">
+          <column name="name" value="station3"/>
+      <column name="address" value="str Mira,8"/>
+      <column name="city_id" valueNumeric="02"/>
+    </insert>
+    <insert tableName="station">
+          <column name="name" value="station4"/>
+      <column name="address" value="str Molodezhnay,35"/>
+      <column name="city_id" valueNumeric="03"/>
+    </insert>
+    <insert tableName="station">
+           <column name="name" value="station5"/>
+      <column name="address" value="str Sovetskay,102"/>
+      <column name="city_id" valueNumeric="04"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

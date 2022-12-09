@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="022220" author="Tatiana Mikhalchenko">
+    <comment>Users</comment>
+    <insert tableName="user_profile">
+      <column name="status" value="ACTIVE"/>
+      <column name="first_name" value="alex"/>
+      <column name="last_name" value="ivanov"/>
+      <column name="email" value="alex@gmail.com"/>
+      <column name="username" value="alex"/>
+      <column name="password" value="$2a$12$lQq.1Qo9S.NxJGnzkdDfbuzutrwVLrcLGoSYNCOS5W5zAEjVjYctC"/>
+      <column name="user_account_id" valueNumeric="01"/>
+    </insert>
+    <insert tableName="user_profile">
+      <column name="status" value="ACTIVE"/>
+    <column name="first_name" value="tatiana"/>
+    <column name="last_name" value="mikhalchenko"/>
+    <column name="email" value="tmihalchenko@gmail.com"/>
+    <column name="username" value="tatiana"/>
+    <column name="password" value="$2a$12$FadATVssr5IcWj01qTyy9OQdkUC/NhSdVTcW.ceEHfk8q8B3feXkW"/>
+    <column name="user_account_id" valueNumeric="02"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

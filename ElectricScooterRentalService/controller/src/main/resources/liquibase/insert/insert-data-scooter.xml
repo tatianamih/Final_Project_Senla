@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="0081" author="Tatiana Mikhalchenko">
+    <comment>Scooters</comment>
+    <insert tableName="scooter">
+        <column name="serial_number" value="201911"/>
+      <column name="release_year" value="2019"/>
+      <column name="mileage" value="0"/>
+      <column name="status" value="FREE"/>
+      <column name="coordinate_x" value="10.33"/>
+      <column name="coordinate_y" value="22.16"/>
+      <column name="cost_per_min" value="2.30"/>
+      <column name="station_id" valueNumeric="01"/>
+      <column name="scooter_type_id" valueNumeric="01"/>
+    </insert>
+    <insert tableName="scooter">
+      <column name="serial_number" value="20201"/>
+      <column name="release_year" value="2020"/>
+      <column name="mileage" value="0"/>
+      <column name="status" value="FREE"/>
+      <column name="coordinate_x" value="1526.14"/>
+      <column name="coordinate_y" value="952.61"/>
+      <column name="cost_per_min" value="1.00"/>
+      <column name="station_id" valueNumeric="01"/>
+      <column name="scooter_type_id" valueNumeric="02"/>
+    </insert>
+    <insert tableName="scooter">
+      <column name="serial_number" value="20221"/>
+      <column name="release_year" value="2022"/>
+      <column name="mileage" value="0"/>
+      <column name="status" value="FREE"/>
+      <column name="coordinate_x" value="110.88"/>
+      <column name="coordinate_y" value="512.65"/>
+      <column name="cost_per_min" value="1.99"/>
+      <column name="station_id" valueNumeric="02"/>
+      <column name="scooter_type_id" valueNumeric="03"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

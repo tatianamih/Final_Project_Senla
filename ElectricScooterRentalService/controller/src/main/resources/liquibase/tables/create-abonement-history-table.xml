@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="010" author="Tatiana Mikhalchenko">
+    <createTable tableName="abonement_card_history"
+      remarks="A table to contain all abonement card histories">
+      <column name="id" type="bigint" autoIncrement="true">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="date" type="timestamp" defaultValueDate="current_timestamp">
+        <constraints nullable="false" />
+      </column>
+      <column name="abonement_cost" type="numeric(1000,2)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="abonement_card_id" type="bigint">
+        <constraints foreignKeyName="abonement_card_abonement_card_history_id" references="abonement_card(id)"/>
+      </column>
+      <column name="user_profile_id" type="bigint">
+        <constraints foreignKeyName="user_profile_abonement_cards_history_id" references="user_profile(id)"/>
+      </column>
+    </createTable>
+
+  </changeSet>
+</databaseChangeLog>

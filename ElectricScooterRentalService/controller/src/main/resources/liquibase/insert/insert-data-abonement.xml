@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="122" author="Tatiana Mikhalchenko">
+    <comment>New abonement cards</comment>
+    <insert tableName="abonement_card">
+      <column name="name" value="vip"/>
+      <column name="abonement_card_cost" value="1000.00"/>
+      <column name="abonement_card_balance" value="1000.00"/>
+    </insert>
+    <insert tableName="abonement_card">
+      <column name="name" value="summer"/>
+      <column name="abonement_card_cost" value="200.00"/>
+      <column name="abonement_card_balance" value="200.00"/>
+    </insert>
+    <insert tableName="abonement_card">
+      <column name="name" value="profi"/>
+      <column name="abonement_card_cost" value="500.00"/>
+      <column name="abonement_card_balance" value="500.00"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
